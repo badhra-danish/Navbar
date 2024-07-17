@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="veiwport" content="width=device-width,initial-scale=1.0">
+       <link href="nav.css" rel="stylesheet">
+       <title>Website</title>
+    </head>
+
+    <body>
+
+        <header>
+            <h2 class="logo">BADHRA'S DEVLOPER</h2>
+            <nav class="navi">
+                <a href="#" style="color: rgba(240, 211, 65, 0.968);">Home</a> 
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+                <button class="btnlogin"> Login</button>
+                <span class="bar"><ion-icon name="menu-outline"></ion-icon></span>
+            </nav>
+
+        </header>
+
+       <div class="wrapper">
+        <span class="closeicon"><ion-icon name="close-outline"></ion-icon></span>
+        <div class="form-box login">
+            <h1>Login</h1>
+            <form acion="#">
+                <div class="inputbox">
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="inputbox">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remforget">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#"> Forgat password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button> 
+                <div class="logregister">
+                    <p>Don't have an account?<a href="#" class="loginlink">  Register </a></p>
+                </div>
+            </form>
+        </div>
+
+   
+        <div class="form-box register">
+            <h1>Registeration</h1>
+            <form acion="#">
+                <div class="inputbox">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="inputbox">
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="inputbox">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remforget">
+                    <label><input type="checkbox"> I agree terms & condition</label>
+                    
+                </div>
+                <button type="submit" class="btn">Register</button> 
+                <div class="logregister">
+                    <p>Already have an account?<a href="#" class="registerlink"> Login </a></p>
+                </div>
+            </form>
+        </div>
+       </div>
+       
+       <script src="nav.js"></script>
+       <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>

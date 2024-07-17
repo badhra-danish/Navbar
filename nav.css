@@ -1,0 +1,336 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+    }
+    body
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    header
+    {
+        position:fixed;
+        top:0;
+        left: 0;
+        width: 100%;
+        padding: 30px 100px;
+        background: rgb(117, 117, 123); 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo
+    {
+        font-size: 2em;
+        color: #fff;
+        user-select: none;
+    
+    }
+    
+    .navi a{
+        position: relative;
+        font-size: 2em;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        margin-left: 40px;
+    
+    }
+    
+    .navi a::before, .navi a::after
+    {
+        content: "";
+        position: absolute;
+        left:0;
+       /* bottom: -6px;*/
+        width: 100%;
+        height: 3px;
+        background: #fff;
+        border-radius: 10px;
+        transform: scaleX(0);
+        transition: transform .5s;
+    }
+    .navi a::before{
+        top: -7px;
+        left: 0;
+        transform-origin: left;
+    }
+    .navi a::after{
+        bottom: -7px;
+        left: 0;
+        transform-origin: right;
+    }
+    .navi a:hover::before, .navi a:hover::after
+    {
+        transform: scaleX(1);
+        /*transform-origin: right;*/
+    }
+    
+    
+    .navi .btnlogin
+    {
+        width: 150px;
+        height: 60px;
+        background: transparent;
+        border: 2px solid #fff;
+        outline: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 2em;
+        color: #fff;
+        font-weight: 500;
+        margin-left: 50px;
+        transition: .6s;
+    }
+    
+    .navi .btnlogin:hover
+    {
+        background:#fff;
+        color: #162938;
+    }
+    
+     .navi .bar {
+        position: relative;
+        height: 50px;
+        width: 50px;
+        color: #fff;
+        font-size: 3em;
+        font-weight: 600;
+        align-items: center;
+        margin-right: -70px;
+        margin-left: 30px;
+        justify-content: center;
+        display: inline-block;
+        cursor: pointer;
+        display: none;
+    
+    }
+    @media (max-width: 1048px){
+        .logo{
+            font-size: 30px;
+            margin: 50px;
+    
+        }
+        .navi a{
+            font-size: 15px;
+            margin-right: 20px;
+        }
+    }
+    @media (max-width: 909px){
+        .navi .bar{
+            display: flex;
+    
+        }
+        .navi a{
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            top: 80px;
+            left: 0;
+            text-align: center;
+    
+        }
+    }
+    .wrapper
+    {
+        position: relative;
+        width: 430px;
+        height: 450px;
+        background: transparent;
+        border: 2px solid rgb(117, 117, 123);
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        transform: scale(0);
+        transition:  transform .5s ease, height .2s ease;
+    }
+    
+    .wrapper.active-pop{
+        transform: scale(1);
+    }
+    
+    .wrapper.active{
+        height: 550px;
+    }
+    .wrapper .form-box
+    {
+        width: 100%;
+        padding: 35px;
+    
+    }
+    
+    .wrapper .form-box.login{
+       /*display: none;*/ 
+       transition: transform .18s ease;
+       transform: translateX(0);
+    }
+    
+    .wrapper.active .form-box.login{
+        transition: none;
+        transform: translateX(-450px);
+    
+    }
+    
+    .wrapper .form-box.register{
+        position: absolute;
+        transition: none;
+        transform: translateX(450px);
+    
+    }
+    
+    .wrapper.active .form-box.register{
+        transition: transform .18s ease;
+        transform: translateX(0);
+    
+    }
+    .wrapper .closeicon{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        background: rgb(117, 117, 123);
+        font-size: 1.5em;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom-left-radius: 20px;
+        border: 2px solid rgb(117, 117, 123);
+        cursor: pointer;
+        z-index: 1;
+    }
+    .wrapper .closeicon:hover{
+        background: #fff;
+        color: rgb(117, 117, 123);
+    
+    }
+    .form-box h1{
+        font-size:3em;
+        color:  rgb(117, 117, 123);
+        text-align: center;
+    
+    }
+    .inputbox{
+        position: relative;
+        width: 100%;
+        height: 60px;
+        margin: 30px 0;
+        border-bottom: 2px solid  rgb(117, 117, 123);
+        font-size: 1.1em;
+    }
+    .inputbox label{
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+        font-size: 1.4em;
+        color:  rgb(117, 117, 123);
+        pointer-events: none;
+        transition: .5s;
+        font-weight: 550;
+        transition: height .2s ease;
+    
+    } 
+    
+    .inputbox input:focus~label,
+    .inputbox input:valid~label{
+        top:-5px;
+    }
+    .inputbox input{
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size:1.5em;
+        color:  rgb(0, 0, 0);
+        font-weight: 500; 
+        padding: 0 35px 0 5px;
+    
+    }
+    .inputbox .icon{
+        position: absolute;
+        right: 8px;
+        font-size: 1.5em;
+        color:  rgb(117, 117, 123);
+        line-height: 57px;
+        pointer-events: none;
+    
+    }
+    .remforget{
+        font-size: 1.4em;
+        color:  rgb(117, 117, 123);
+        font-weight: 500;
+        margin: -15px 0 15px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .remforget label input{
+        accent-color:  rgb(117, 117, 123);
+        margin: 3px;
+    
+    }
+    .remforget a{
+        color:  rgb(117, 117, 123);
+        text-decoration: none;
+    
+    }
+    .remforget a:hover{
+        color: rgb(117, 117, 123);
+        text-decoration: underline;
+    }
+    .btn{
+        width: 100%;
+        height: 50px;
+        background:  rgb(117, 117, 123);
+        border: 2px solid rgb(117, 117, 123);
+        outline: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1.5em;
+        color: #fff;
+        font-weight: 600;
+        transition: .5s;
+    
+    }
+    .btn:hover{
+        background: #fff;
+        color:  rgb(117, 117, 123);
+    }
+    .logregister{
+        font-size: 1.4em;
+        color:  rgb(117, 117, 123);
+        text-align: center;
+        font-weight: 500;
+        margin: 25px 0 10px;
+        justify-content: space-between;
+    
+    }
+    .logregister p a{
+        color:  rgb(117, 117, 123);
+        text-decoration: none;
+        font-weight: 600;
+        justify-content: space-between;
+    
+        
+    }
+    .logregister p a:hover{
+        text-decoration: underline;
+    
+    }
+    .card{
+        width: 12em;
+        height: 12px;
+        border: 2px solid black;
+        left: 0;
+        background-color: #fff;
+        padding: 1em;
+    
+    }
